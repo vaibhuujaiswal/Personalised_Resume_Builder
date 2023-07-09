@@ -38,7 +38,12 @@ Start the React Project
   npm run start
 ```
 
-(Make sure API server is running (demo)
+(Make sure API server is running (demo) [
+```
+cd demo/src/main/java/com/adobe/pdfservices/operation/samples/documentmerge/
+```
+and Run MergeDocumentToDocxApplication.java
+
 ## Repository content
 
 1) *src* : Contains the Main React files including App.js, App.css, Index.js and Index.css
