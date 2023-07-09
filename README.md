@@ -32,12 +32,13 @@ Install dependencies
   npm install
 ```
 
-Start the server
+Start the React Project
 
 ```bash
   npm run start
 ```
 
+(Make sure API server is running (demo)
 ## Repository content
 
 1) *src* : Contains the Main React files including App.js, App.css, Index.js and Index.css
