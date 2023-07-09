@@ -44,6 +44,8 @@ cd demo/src/main/java/com/adobe/pdfservices/operation/samples/documentmerge/
 ```
 and Run MergeDocumentToDocxApplication.java
 
+(Configure required maven dependencies and indexing)
+
 ## Repository content
 
 1) *src* : Contains the Main React files including App.js, App.css, Index.js and Index.css
