@@ -97,7 +97,7 @@ public class ResumeController implements java.io.Serializable {
 
             // Set the operation input document template from a source file.
             String templateName = templateDictionary.get(resumeRequest.getTemplate_id());
-            FileRef documentTemplate = FileRef.createFromLocalFile("src/main/resources/templates/" + templateName);
+            FileRef documentTemplate = FileRef.createFromLocalFile("demo/src/main/resources/templates/" + templateName);
             documentMergeOperation.setInput(documentTemplate);
 
             // Execute the operation
