@@ -23,7 +23,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd Personalised_Resume_Builder
 ```
 
 Install dependencies
