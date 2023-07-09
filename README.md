@@ -136,5 +136,5 @@ Contact me at vaibhav20547@iiitd.ac.in for any doubts!
 
 ## Application Look
 
-![App Screenshot](https://github.com/vaibhuujaiswal/Personalised_Resume_Builder/Screenshot 2023-07-09 at 5.46.00 PM.png)
+![App Screenshot](https://github.com/vaibhuujaiswal/Personalised_Resume_Builder/blob/master/Screenshot%202023-07-09%20at%205.46.00%20PM.png)
 
