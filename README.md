@@ -134,5 +134,7 @@ Do you want to open this link: https://developer.adobe.com/document-services/doc
 
 Contact me at vaibhav20547@iiitd.ac.in for any doubts!
 
+## Application Look
 
+![App Screenshot](https://github.com/vaibhuujaiswal/Personalised_Resume_Builder/Screenshot 2023-07-09 at 5.46.00 PM.png)
 
