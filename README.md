@@ -17,25 +17,25 @@ git clone "https://github.com/vaibhuujaiswal/Personalised_Resume_Builder.git"
 Clone the project
 
 ```bash
-  git clone "https://github.com/vaibhuujaiswal/Personalised_Resume_Builder.git"
+git clone "https://github.com/vaibhuujaiswal/Personalised_Resume_Builder.git"
 ```
 
 Go to the project directory
 
 ```bash
-  cd Personalised_Resume_Builder
+cd Personalised_Resume_Builder
 ```
 
 Install dependencies
 
 ```bash
-  npm install
+npm install
 ```
 
 Start the React Project
 
 ```bash
-  npm run start
+npm run start
 ```
 
 (Make sure API server is running (demo) [
