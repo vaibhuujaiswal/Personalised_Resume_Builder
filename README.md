@@ -47,6 +47,7 @@ and Run MergeDocumentToDocxApplication.java
 (Configure required maven dependencies and indexing)
 
 Note: Run the local host 3000 on Firefox. Running on Google Chrome or Internet Explorer will give "Uncaught TypeError: Cannot read property 'value' of null" Error, but will still download the output file.
+If you have issues with npm install using ```npm cache clean```
 
 ## Repository content
 
