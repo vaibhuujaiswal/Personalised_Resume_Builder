@@ -37,6 +37,7 @@ Now, since we had to respond with content type as PDF. We would create a ByteArr
 
 The API handles errors by using try catch statements and sending responseEntity with httpStatus as well as logging the error using Logger.
 
+Error Handling -> 
 400 : Bad Request 
 401 : Unauthorised 
 404 :Template not found 
