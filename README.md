@@ -138,3 +138,9 @@ Contact me at vaibhav20547@iiitd.ac.in for any doubts!
 
 ![App Screenshot](https://github.com/vaibhuujaiswal/Personalised_Resume_Builder/blob/master/screencapture-localhost-3000-2023-07-09-17_48_54.png)
 
+## Final Document Displayed and Downloaded
+![App Screenshot](https://github.com/vaibhuujaiswal/Personalised_Resume_Builder/blob/master/FinalDocumentDisplayedAndPrinted.png)
+
+## Loading Screen
+
+![App Screenshot](https://github.com/vaibhuujaiswal/Personalised_Resume_Builder/blob/master/Loader%20Screen.png)
