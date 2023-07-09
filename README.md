@@ -1,8 +1,55 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Personalised Resume Builder (UI and API)
 
-## Available Scripts
+The repository contains a personalised resume builder (API and User Interface) which takes user input either through the user interace (web interface) or through a curl request via the API in the form of json and merges with preexisting choosen template. The API returns your personalised resume in form of pdf. This project is tailored made as a solution to Adobe Document Cloud Hackathon - Round 2 submission
+
+
+
+## Repository content
+
+1) *src* : Contains the Main React files including App.js, App.css, Index.js and Index.css
+2) *public* : Contains React App Resources.
+3) *demo* : Contains the Resume Builder API. (Made based on the API Specification)
+
+## 1) Resume Builder API (demo)
+
+Resume builder API has end point POST /resume. The request header is content type : application/json and accept application/pdf. The request object was created based on specification (list of personal, academic and professional experience) sent in the form of json. The response headers content-type is application/pdf and the response object is returned in PDF format.
+
+Spring boot creates a POST Mapping which accepts the json from client into class ResumeRequest using RequestBody annotation. 
+
+The ResumeRequest further has classes of PersonalInformation, Achievement, Education and Experience to structure the classes properly. We then use resumeRequestSerializer which has extended jackson JsonSerializer. 
+
+It helps us use the information stored in the instance of ResumeRequest. It uses the jsonGenerator to write the data stored in the instance with the json format accepted by the Document Generation API. The template ID has been mapped with the name of the docx present in the resources file. 
+
+We then use ObjectMapper and simpleModule to register add our serializer to our module with resumeRequestSerializer function and registers the module in the objectMapper. The objectMapper finally writes the value as string to JsonObject. 
+
+The credentials are verified with the Adobe API and the pdf file is saved in FileRef. Now one can either directly save the file in local Repository. 
+
+Now, since we had to respond with content type as PDF. We would create a ByteArrayOutputStream and save the output in the same. The converted ByteArray is the added to response entity with http headers indicating the media type as pdf and file name.
+
+The API handles errors by using try catch statements and sending responseEntity with httpStatus as well as logging the error using Logger.
+
+400 : Bad Request 
+401 : Unauthorised 
+404 :Template not found 
+500 : Internal Server Error
+
+### Access and Running API
+To allow a local host to access the server (CORS), @CrossOrigin was used to add origin as localhost : 3000. 
+
+The API is generally accesible through http://localhost:8080/resume.
+
+To run the server : Go to the demo file and navigate MergeDocumentToDocxApplication.java and run the program. This will lead to the API to hear for any request on port 8080.
+
+To obtain the response using curl command directly through terminal (port 8080), please make sure to add ` --output NameofPdfFile.pdf` to your curl request to save the pdf to your local directory. (Without this command it will result in the output overloading the terminal).
+
+Some of the output files are saved inside output in demo.
+
+## 2) Resume Builder UI
+
+The UI is implemented using a simple react.js project which converts the input to json and sends the request using fetch API to /resume. (Make sure that the server (API) is up and running and listening). The API returns the pdf file as requestEntity and is saved in blob. The blob saves the pdf file to your local system and creates a fileURL which open in another pdf file. 
+
+The UI implements basic function of choosing the template, inputting personal information, adding multiple schools, experiences etc. On clicking generate pdf button the json is sent to the API and we recieve PDF from the API.
 
 In the project directory, you can run:
 
@@ -39,32 +86,19 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Result
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1) The API is created with java and spring-boot
+2) UI has been created with React JS
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Adobe Document Generation API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Do you want to open this link: https://developer.adobe.com/document-services/docs/overview/document-generation-api/quickstarts/?
 
-### Analyzing the Bundle Size
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contact me at vaibhav20547@iiitd.ac.in for any doubts!
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
