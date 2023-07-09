@@ -46,6 +46,8 @@ and Run MergeDocumentToDocxApplication.java
 
 (Configure required maven dependencies and indexing)
 
+Note: Run the local host 3000 on Firefox. Running on Google Chrome or Internet Explorer will give "Uncaught TypeError: Cannot read property 'value' of null" Error, but will still download the output file.
+
 ## Repository content
 
 1) *src* : Contains the Main React files including App.js, App.css, Index.js and Index.css
@@ -68,7 +70,7 @@ The credentials are verified with the Adobe API and the pdf file is saved in Fil
 
 Now, since we had to respond with content type as PDF. We would create a ByteArrayOutputStream and save the output in the same. The converted ByteArray is the added to response entity with http headers indicating the media type as pdf and file name.
 
-The API handles errors by using try catch statements and sending responseEntity with httpStatus as well as logging the error using Logger.
+The API handles errors by using try catch statements and sending responseEntity with httpStatus as well as logging the error using Logger. If we miss any field
 
 Error Handling -> 
 400 : Bad Request 
@@ -102,6 +104,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
 
 ### `npm test`
 
